@@ -1,0 +1,183 @@
+{
+  "protected_features": {
+    "person_gender": {
+      "name": "person_gender",
+      "category": "protected",
+      "feature_type": "categorical",
+      "preprocessing": "none",
+      "description": "Gender of applicant"
+    },
+    "person_age": {
+      "name": "person_age",
+      "category": "protected",
+      "feature_type": "categorical",
+      "preprocessing": "none",
+      "description": "Age of applicant"
+    },
+    "marital_status": {
+      "name": "marital_status",
+      "category": "protected",
+      "feature_type": "categorical",
+      "preprocessing": "none",
+      "description": "Marital status"
+    },
+    "education_level": {
+      "name": "education_level",
+      "category": "protected",
+      "feature_type": "categorical",
+      "preprocessing": "none",
+      "description": "Education qualification"
+    },
+    "geographic_region": {
+      "name": "geographic_region",
+      "category": "protected",
+      "feature_type": "categorical",
+      "preprocessing": "none",
+      "description": "Geographic region"
+    }
+  },
+  "given_features": {
+    "person_id": {
+      "name": "person_id",
+      "category": "given",
+      "feature_type": "categorical",
+      "preprocessing": "none",
+      "description": "Unique identifier for person"
+    },
+    "loan_id": {
+      "name": "loan_id",
+      "category": "given",
+      "feature_type": "categorical",
+      "preprocessing": "none",
+      "description": "Unique identifier for loan"
+    },
+    "loan_purpose": {
+      "name": "loan_purpose",
+      "category": "given",
+      "feature_type": "categorical",
+      "preprocessing": "onehot",
+      "description": "Purpose of the loan"
+    },
+    "number_of_jobs_switched": {
+      "name": "number_of_jobs_switched",
+      "category": "given",
+      "feature_type": "numeric",
+      "preprocessing": "standard_scaler",
+      "description": "Number of jobs changed"
+    },
+    "person_emp_exp_months": {
+      "name": "person_emp_exp_months",
+      "category": "given",
+      "feature_type": "numeric",
+      "preprocessing": "standard_scaler",
+      "description": "Current employment experience in months"
+    },
+    "application_date": {
+      "name": "application_date",
+      "category": "given",
+      "feature_type": "categorical",
+      "preprocessing": "none",
+      "description": "Date of loan application"
+    },
+    "loan_amount_inr": {
+      "name": "loan_amount_inr",
+      "category": "given",
+      "feature_type": "numeric",
+      "preprocessing": "standard_scaler",
+      "description": "Loan amount requested"
+    },
+    "loan_int_rate": {
+      "name": "loan_int_rate",
+      "category": "given",
+      "feature_type": "numeric",
+      "preprocessing": "standard_scaler",
+      "description": "Interest rate"
+    },
+    "loan_tenure_years": {
+      "name": "loan_tenure_years",
+      "category": "given",
+      "feature_type": "numeric",
+      "preprocessing": "standard_scaler",
+      "description": "Loan tenure in years"
+    },
+    "credit_score": {
+      "name": "credit_score",
+      "category": "given",
+      "feature_type": "numeric",
+      "preprocessing": "standard_scaler",
+      "description": "Credit score"
+    },
+    "number_of_open_credit_lines": {
+      "name": "number_of_open_credit_lines",
+      "category": "given",
+      "feature_type": "numeric",
+      "preprocessing": "standard_scaler",
+      "description": "Number of active credit lines"
+    },
+    "number_of_hard_inquiries": {
+      "name": "number_of_hard_inquiries",
+      "category": "given",
+      "feature_type": "numeric",
+      "preprocessing": "standard_scaler",
+      "description": "Number of credit inquiries"
+    },
+    "months_since_last_delinquency": {
+      "name": "months_since_last_delinquency",
+      "category": "given",
+      "feature_type": "numeric",
+      "preprocessing": "standard_scaler",
+      "description": "Months since last late payment"
+    },
+    "number_of_public_records": {
+      "name": "number_of_public_records",
+      "category": "given",
+      "feature_type": "numeric",
+      "preprocessing": "standard_scaler",
+      "description": "Number of public records"
+    },
+    "previous_loan_defaults_on_file": {
+      "name": "previous_loan_defaults_on_file",
+      "category": "given",
+      "feature_type": "categorical",
+      "preprocessing": "onehot",
+      "description": "Previous loan defaults record"
+    },
+    "co_applicant_income": {
+      "name": "co_applicant_income",
+      "category": "given",
+      "feature_type": "numeric",
+      "preprocessing": "standard_scaler",
+      "description": "Income of co-applicant"
+    },
+    "co_applicant_credit_score": {
+      "name": "co_applicant_credit_score",
+      "category": "given",
+      "feature_type": "numeric",
+      "preprocessing": "standard_scaler",
+      "description": "Credit score of co-applicant"
+    }
+  },
+  "derived_features": {
+    "credit_utilization_ratio": {
+      "name": "credit_utilization_ratio",
+      "category": "derived",
+      "feature_type": "numeric",
+      "preprocessing": "standard_scaler",
+      "description": "Ratio of credit used to credit available"
+    },
+    "total_experience_months": {
+      "name": "total_experience_months",
+      "category": "derived",
+      "feature_type": "numeric",
+      "preprocessing": "standard_scaler",
+      "description": "Total work experience in months"
+    },
+    "person_income_annual_inr": {
+      "name": "person_income_annual_inr",
+      "category": "derived",
+      "feature_type": "numeric",
+      "preprocessing": "standard_scaler",
+      "description": "Annual income in INR"
+    }
+  }
+}

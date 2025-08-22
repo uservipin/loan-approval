@@ -1,0 +1,30 @@
+Category,Feature Name,Description,Datatype
+Personal Information,person_id,Unique identifier for each person,object
+Personal Information,education_level,Education qualification of the applicant,object
+Personal Information,person_age,Age of the applicant,object
+Personal Information,person_gender,Gender of the applicant,object
+Personal Information,marital_status,Marital status of the applicant,object
+Employment Information,person_emp_exp_months,Current employment experience in months,float64
+Employment Information,number_of_jobs_switched,Number of job changes,float64
+Employment Information,total_experience_months,Total work experience in months,float64
+Employment Information,avg_tenure_months,Average time spent in each job,float64
+Employment Information,person_income_monthly_inr,Monthly income in INR,float64
+Employment Information,person_income_annual_inr,Annual income in INR,float64
+Loan Information,loan_purpose,Purpose of the loan,object
+Loan Information,loan_amount_inr,Loan amount in INR,float64
+Loan Information,loan_id,Unique identifier for the loan,object
+Loan Information,loan_int_rate,Interest rate of the loan,float64
+Loan Information,loan_tenure_years,Duration of the loan in years,float64
+Loan Information,currency,Currency of the loan (all in INR),object
+Loan Information,credit_approved,Whether the loan was approved (1) or not (0),float64
+Credit Information,credit_utilization_ratio,Ratio of credit used to credit available,float64
+Credit Information,credit_score,Credit score of the applicant,float64
+Credit Information,previous_loan_defaults_on_file,Previous loan defaults record,object
+Credit Information,number_of_open_credit_lines,Number of active credit lines,float64
+Credit Information,number_of_hard_inquiries,Number of credit inquiries,float64
+Credit Information,months_since_last_delinquency,Months since last late payment,float64
+Credit Information,number_of_public_records,Number of public records,float64
+Co-applicant Information,co_applicant_income,Income of the co-applicant,float64
+Co-applicant Information,co_applicant_credit_score,Credit score of the co-applicant,float64
+Application Details,application_date,Date of loan application,object
+Application Details,geographic_region,Region where loan was applied,object

@@ -1,0 +1,17 @@
+Engineered Feature,Why / How
+dti,Debt-to-Income: (existing EMIs + proposed EMI) / monthly_income
+foir,Fixed Obligation to Income Ratio: total monthly obligations / monthly_income
+ltv,Loan-to-Value: loan_amount / collateral (or property) value
+emi_calc,"EMI computed from principal, interest_rate, tenure (for consistency)"
+credit_utilization,Total revolving balance / total revolving credit limit
+credit_age_months,Months since oldest tradeline opened
+recent_inquiries_3m,Number of bureau enquiries in last 3 months
+recent_inquiries_6m,Number of bureau enquiries in last 6 months
+delinquency_recency,Days since last delinquency or most severe DPD
+num_open_accounts,Count of currently open tradelines
+unsecured_ratio,Share of unsecured exposure to total exposure
+cashflow_volatility,Std. dev. of monthly net inflow (from bank statements)
+salary_stability,Share of months with on-time salary credit in last 6-12 months
+address_stability,Years at current address (if not present already)
+employer_tenure_years,Years with current employer (if not present already)
+ptir,Payment-to-Income Ratio: proposed EMI / monthly_income

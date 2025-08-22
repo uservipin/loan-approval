@@ -1,0 +1,25 @@
+{
+  "training": {
+    "cv_folds": 5,
+    "scoring": "f1",
+    "threshold_selection": "optimal_f1"
+  },
+  "evaluation": {
+    "metrics": [
+      "roc_auc",
+      "avg_precision",
+      "precision",
+      "recall",
+      "f1",
+      "brier",
+      "confusion_matrix",
+      "optimal_threshold"
+    ],
+    "fairness_metrics": [
+      "approval_rate",
+      "precision",
+      "recall",
+      "f1"
+    ]
+  }
+}

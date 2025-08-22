@@ -1,0 +1,93 @@
+{
+  "solvers": [
+    "saga",
+    "liblinear",
+    "lbfgs"
+  ],
+  "solver_params": {
+    "saga": {
+      "C": [
+        0.1,
+        0.3,
+        1.0,
+        3.0,
+        10.0
+      ],
+      "penalty": [
+        "l2",
+        "elasticnet"
+      ],
+      "l1_ratio": [
+        0.1,
+        0.3,
+        0.5
+      ],
+      "class_weight": [
+        "balanced",
+        {
+          "0": 1,
+          "1": 2
+        },
+        {
+          "0": 1,
+          "1": 5
+        }
+      ],
+      "max_iter": 3000,
+      "tol": 0.0001
+    },
+    "liblinear": {
+      "C": [
+        0.1,
+        0.3,
+        1.0,
+        3.0,
+        10.0
+      ],
+      "penalty": [
+        "l1",
+        "l2"
+      ],
+      "class_weight": [
+        "balanced",
+        {
+          "0": 1,
+          "1": 2
+        },
+        {
+          "0": 1,
+          "1": 5
+        }
+      ],
+      "max_iter": 3000,
+      "tol": 0.0001
+    },
+    "lbfgs": {
+      "C": [
+        0.1,
+        0.3,
+        1.0,
+        3.0,
+        10.0
+      ],
+      "penalty": [
+        "l2"
+      ],
+      "class_weight": [
+        "balanced",
+        {
+          "0": 1,
+          "1": 2
+        },
+        {
+          "0": 1,
+          "1": 5
+        }
+      ],
+      "max_iter": 3000,
+      "tol": 0.0001
+    }
+  },
+  "cv_folds": 5,
+  "random_state": 42
+}

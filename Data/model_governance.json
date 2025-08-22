@@ -1,0 +1,95 @@
+{
+  "model_info": {
+    "name": "Loan Approval Model",
+    "version": "1.0.0",
+    "purpose": "Credit risk assessment and loan approval decision",
+    "created_date": "2025-08-23T00:04:02.983946",
+    "owner": "Risk Team"
+  },
+  "data_handling": {
+    "protected_features": [
+      "person_gender",
+      "person_age",
+      "marital_status",
+      "education_level",
+      "geographic_region"
+    ],
+    "feature_transformations": {
+      "numerical_features": {
+        "strategy": "standard_scaler",
+        "features": [
+          "number_of_jobs_switched",
+          "person_emp_exp_months",
+          "loan_amount_inr",
+          "loan_int_rate",
+          "loan_tenure_years",
+          "credit_score",
+          "number_of_open_credit_lines",
+          "number_of_hard_inquiries",
+          "months_since_last_delinquency",
+          "number_of_public_records",
+          "co_applicant_income",
+          "co_applicant_credit_score",
+          "credit_utilization_ratio",
+          "total_experience_months",
+          "person_income_annual_inr"
+        ]
+      },
+      "categorical_features": {
+        "strategy": "onehot",
+        "features": [
+          "loan_purpose",
+          "previous_loan_defaults_on_file"
+        ]
+      },
+      "excluded_features": [
+        "person_id",
+        "loan_id",
+        "application_date"
+      ]
+    },
+    "fairness_monitoring": [
+      "approval_rate",
+      "precision",
+      "recall"
+    ]
+  },
+  "model_details": {
+    "algorithm": "Logistic Regression",
+    "training_approach": {
+      "cv_folds": 5,
+      "scoring": "average_precision",
+      "threshold_selection": "precision_constrained"
+    },
+    "evaluation_metrics": [
+      "roc_auc",
+      "avg_precision",
+      "precision",
+      "recall",
+      "f1",
+      "brier",
+      "confusion_matrix"
+    ]
+  },
+  "monitoring": {
+    "drift_thresholds": {
+      "psi_threshold": 0.2,
+      "performance_drop_threshold": 0.05
+    },
+    "monitoring_frequency": "weekly",
+    "metrics_to_monitor": [
+      "roc_auc",
+      "precision",
+      "recall",
+      "f1",
+      "approval_rate",
+      "feature_drift"
+    ]
+  },
+  "compliance": {
+    "fairness_checks": true,
+    "protected_attributes_handling": "segregated_analysis",
+    "model_explainability": "SHAP values",
+    "drift_monitoring": "PSI"
+  }
+}
