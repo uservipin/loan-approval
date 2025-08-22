@@ -28,6 +28,7 @@ References:
 
 from __future__ import annotations
 
+import os
 import pandas as pd
 import numpy as np
 from typing import List, Dict, Tuple
@@ -231,6 +232,8 @@ def prepare_data(
     fairness_cols = [col for col in fairness_cols if col in df.columns]
     # Exclude fairness columns from predictors to prevent leakage of protected information
     predictor_cols = [col for col in predictor_cols if col not in fairness_cols]
+    if set(predictor_cols).intersection(fairness_cols):
+        raise ValueError("Protected features found in predictors")
     # Subset predictors and target
     X = df[predictor_cols].copy()
     y = df["loan_status"].copy()
@@ -305,6 +308,29 @@ def train_model(
     return grid_search
 
 
+def log_metrics(metrics: Dict[str, float | np.ndarray], log_dir: str = "logs") -> None:
+    """Save each metric value to a dedicated log file.
+
+    Metrics with array values (e.g. confusion matrices) are skipped.
+    Any logging errors are caught and reported.
+
+    Args:
+        metrics: Mapping of metric names to values.
+        log_dir: Directory in which log files will be created.
+    """
+    os.makedirs(log_dir, exist_ok=True)
+    for name, value in metrics.items():
+        if isinstance(value, (np.ndarray, list)):
+            continue
+        filename = f"{name.lower().replace(' ', '_')}.log"
+        path = os.path.join(log_dir, filename)
+        try:
+            with open(path, "a") as f:
+                f.write(f"{value}\n")
+        except Exception as e:
+            print(f"Failed to log {name}: {e}")
+
+
 def evaluate_performance(
     model: Pipeline,
     X_test: pd.DataFrame,
@@ -339,6 +365,10 @@ def evaluate_performance(
     if print_results:
         for metric, value in metrics.items():
             print(f"{metric}: {value}")
+    try:
+        log_metrics(metrics)
+    except Exception as e:
+        print(f"Metric logging failed: {e}")
     return metrics
 
 
