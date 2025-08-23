@@ -33,7 +33,7 @@ FEATURE_CLASSIFICATION: Optional[str] = "data/feature_classification.csv"
 OUT_DIR = "Data"
 
 # speed/quality knobs
-CV_FOLDS = 5  # faster
+CV_FOLDS = 4  # faster
 FAST_MODE = False        # if True -> only lbfgs (4 combos). If False -> lbfgs & saga (8 combos)
 MAX_ITER = 50  # higher convergence budget
 C_GRID = [10, 100, 1000]
