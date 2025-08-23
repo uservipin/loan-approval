@@ -221,7 +221,7 @@ def main(data_path=DEFAULT_DATA, target=DEFAULT_TARGET, feature_classification=F
     grid = get_param_grid()
 
     min_class = int(pd.Series(y_train).value_counts().min())
-    n_splits = max(5, min(CV_FOLDS, min_class))
+    n_splits = max(4, min(CV_FOLDS, min_class))
     cv = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=RANDOM_STATE)
 
     combos = len(grid[0]["clf__solver"]) * len(grid[0]["clf__C"])
