@@ -25,7 +25,7 @@ OUT_DIR = "Data"
 CV_FOLDS = 5  # faster
 FAST_MODE = False        # if True -> only lbfgs (4 combos). If False -> lbfgs & saga (8 combos)
 MAX_ITER = 1000 # higher convergence budget
-C_GRID = [0.1, 1, 10]
+C_GRID = [0.1, 1, 5,10, 15]
 
 # threshold constraints
 MIN_PRECISION = 0.75
@@ -39,7 +39,7 @@ SAMPLE_NROWS: Optional[int] = None
 # --------------- Utils ------------------
 def make_ohe():
     try:
-        return OneHotEncoder(handle_unknown="ignore", sparse_output=False, min_frequency=0.05)
+        return OneHotEncoder(handle_unknown="ignore", sparse_output=False, min_frequency=0.1)
     except TypeError:
         return OneHotEncoder(handle_unknown="ignore", sparse=False)
 
