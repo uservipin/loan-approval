@@ -40,10 +40,10 @@ C_GRID = [0.1, 1, 10]
 
 # threshold constraints
 MIN_PRECISION = 0.75
-MIN_RECALL = 0.5
+MIN_RECALL = 0.6
 
-RANDOM_STATE = 45
-TEST_SIZE = 0.3
+RANDOM_STATE = 44
+TEST_SIZE = 0.2
 SMOKE = False
 SAMPLE_NROWS: Optional[int] = None
 
