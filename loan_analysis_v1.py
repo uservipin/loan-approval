@@ -268,7 +268,7 @@ def main(data_path=DEFAULT_DATA, target=DEFAULT_TARGET, feature_classification=F
     print(json.dumps(out, indent=2))
     if tinfo and not tinfo.get("constraints_met", False):
         print(f"\n[warn] Could not meet precision>={MIN_PRECISION:.2f} & recall>={MIN_RECALL:.2f} at any threshold. "
-              f"Best: P={tinfo['precision']:.3f}, R={tinfo['recall']:.3f}.")
+              f"Best: P={tinfo['precision']:.3f}, R={tinfo['recall']:.2f}.")
 
 if __name__ == "__main__":
     main()
