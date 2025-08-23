@@ -42,7 +42,7 @@ C_GRID = [0.1, 1, 10, 100, 1000]
 MIN_PRECISION = 0.7
 MIN_RECALL = 0.5
 
-RANDOM_STATE = 42
+RANDOM_STATE = 45
 TEST_SIZE = 0.3
 SMOKE = False
 SAMPLE_NROWS: Optional[int] = None
@@ -221,7 +221,7 @@ def main(data_path=DEFAULT_DATA, target=DEFAULT_TARGET, feature_classification=F
     grid = get_param_grid()
 
     min_class = int(pd.Series(y_train).value_counts().min())
-    n_splits = max(2, min(CV_FOLDS, min_class))
+    n_splits = max(5, min(CV_FOLDS, min_class))
     cv = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=RANDOM_STATE)
 
     combos = len(grid[0]["clf__solver"]) * len(grid[0]["clf__C"])
