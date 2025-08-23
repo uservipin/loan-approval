@@ -39,7 +39,7 @@ MAX_ITER = 1000 # higher convergence budget
 C_GRID = [0.1, 1, 10]
 
 # threshold constraints
-MIN_PRECISION = 0.7
+MIN_PRECISION = 0.75
 MIN_RECALL = 0.5
 
 RANDOM_STATE = 45
