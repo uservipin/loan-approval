@@ -128,9 +128,11 @@ def infer_feature_types(df: pd.DataFrame, target: str):
 
 # Create pipeline for Preprocessing Steps 
 def build_preprocessor(num_cols, cat_cols):
+    # Preprocessing on num_d_type
     num_tf = Pipeline([("imputer", SimpleImputer(strategy="median")),
                        ("cap", OutlierCapper()),
                        ("scale", RobustScaler())])
+    # Preporcessing in cat datatype
     cat_tf = Pipeline([("imputer", SimpleImputer(strategy="most_frequent")),
                        ("ohe", make_ohe())])
     return ColumnTransformer([("num", num_tf, num_cols),
@@ -258,7 +260,7 @@ def main(data_path=DEFAULT_DATA, target=DEFAULT_TARGET, feature_classification=F
         "cv_folds": n_splits,
         "fast_mode": FAST_MODE
     }
-
+    # Save features tag, best model in pkl format and hyperparameter as log files 
     out_dir = Path(OUT_DIR); out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir/"feature_tags_fast.csv").write_text(tags.to_csv(index=False))
     with open(out_dir/"run_artifacts_fast.json","w") as f: json.dump(out, f, indent=2)
