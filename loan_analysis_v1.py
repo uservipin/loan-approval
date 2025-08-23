@@ -1,14 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Loan Approval Model - L2 Balanced Fast Grid + Threshold Constraints
-
-- Only L2 penalty
-- class_weight='balanced' (fixed)
-- Narrow, fast grid (lbfgs/saga × C in {0.01, 0.1, 1.0, 10.0})
-- Higher max_iter for convergence
-- Threshold tuning to require precision >= MIN_PRECISION and recall >= MIN_RECALL (if achievable)
-"""
 
 import json, pickle, time
 from pathlib import Path
