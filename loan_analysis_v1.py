@@ -39,7 +39,7 @@ SAMPLE_NROWS: Optional[int] = None
 # --------------- Utils ------------------
 def make_ohe():
     try:
-        return OneHotEncoder(handle_unknown="ignore", sparse_output=False, min_frequency=0.1)
+        return OneHotEncoder(handle_unknown="ignore", sparse_output=False, min_frequency=0.15)
     except TypeError:
         return OneHotEncoder(handle_unknown="ignore", sparse=False)
 
