@@ -1,0 +1,48 @@
+{
+  "best_params": {
+    "clf__C": 1000,
+    "clf__class_weight": "balanced",
+    "clf__max_iter": 50,
+    "clf__penalty": "l2",
+    "clf__solver": "lbfgs"
+  },
+  "best_score_mean_cv_f1": 0.8508354167393648,
+  "threshold_constraints": {
+    "min_precision": 0.6,
+    "min_recall": 0.6,
+    "tuning": {
+      "threshold": 0.42297931660877264,
+      "precision": 0.7606635071090048,
+      "recall": 0.9658976930792377,
+      "f1": 0.8510826336716237,
+      "constraints_met": true
+    }
+  },
+  "test_metrics": {
+    "f1": 0.8510826336721167,
+    "precision": 0.7606635071090048,
+    "recall": 0.7858976930792377,
+    "roc_auc": 0.7459002986634184,
+    "pr_auc": 0.7390776947168582
+  },
+  "protected_features_excluded": [
+    "education_level",
+    "person_age",
+    "person_gender",
+    "marital_status",
+    "geographic_region"
+  ],
+  "allowed_features_count": 23,
+  "solvers": [
+    "lbfgs",
+    "saga"
+  ],
+  "C_grid": [
+    10,
+    100,
+    1000
+  ],
+  "max_iter": 50,
+  "cv_folds": 5,
+  "fast_mode": false
+}

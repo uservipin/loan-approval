@@ -1,0 +1,77 @@
+{
+  "timestamp": "2025-08-23 22:12:18",
+  "target": "credit_approved",
+  "numeric_features": [
+    "person_emp_exp_months",
+    "number_of_jobs_switched",
+    "total_experience_months",
+    "avg_tenure_months",
+    "person_income_monthly_inr",
+    "person_income_annual_inr",
+    "loan_amount_inr",
+    "credit_utilization_ratio",
+    "loan_int_rate",
+    "credit_score",
+    "number_of_open_credit_lines",
+    "number_of_hard_inquiries",
+    "months_since_last_delinquency",
+    "number_of_public_records",
+    "co_applicant_income",
+    "co_applicant_credit_score",
+    "loan_tenure_years"
+  ],
+  "categorical_features": [
+    "person_id",
+    "currency",
+    "loan_purpose",
+    "previous_loan_defaults_on_file",
+    "application_date"
+  ],
+  "allowed_features": [
+    "person_id",
+    "person_emp_exp_months",
+    "number_of_jobs_switched",
+    "total_experience_months",
+    "avg_tenure_months",
+    "person_income_monthly_inr",
+    "person_income_annual_inr",
+    "currency",
+    "loan_purpose",
+    "loan_amount_inr",
+    "credit_utilization_ratio",
+    "loan_int_rate",
+    "credit_score",
+    "previous_loan_defaults_on_file",
+    "number_of_open_credit_lines",
+    "number_of_hard_inquiries",
+    "months_since_last_delinquency",
+    "number_of_public_records",
+    "co_applicant_income",
+    "co_applicant_credit_score",
+    "application_date",
+    "loan_tenure_years"
+  ],
+  "protected_features_excluded": [
+    "education_level",
+    "person_age",
+    "person_gender",
+    "marital_status",
+    "geographic_region"
+  ],
+  "feature_tags_csv": "Data/feature_tags.csv",
+  "best_params": {
+    "clf__C": 0.1,
+    "clf__class_weight": "balanced",
+    "clf__max_iter": 200,
+    "clf__penalty": "l2",
+    "clf__solver": "lbfgs"
+  },
+  "best_score_mean_cv_f1": 0.2606247671024336,
+  "test_metrics": {
+    "f1": 0.2638981915606162,
+    "precision": 0.18139963167587478,
+    "recall": 0.48402948402948404,
+    "roc_auc": 0.6157924578977211,
+    "pr_auc": 0.1935154215060408
+  }
+}
