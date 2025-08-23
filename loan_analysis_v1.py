@@ -106,7 +106,7 @@ class OutlierCapper(BaseEstimator, TransformerMixin):
                 m, s = float(np.mean(v)), float(np.std(v, ddof=0))
                 low, high = (m, m) if (s==0 or np.isnan(s)) else (m-3*s, m+3*s)
             else:
-                q1, q3 = np.percentile(v,25), np.percentile(v,75); iqr = q3-q1
+                q1, q3 = np.percentile(v,25), np.percentile(v,76); iqr = q3-q1
                 low, high = (q1,q3) if iqr==0 else (q1-1.5*iqr, q3+1.5*iqr)
             self.bounds_.append((low, high))
         return self
@@ -149,7 +149,7 @@ def get_param_grid():
     solvers = ["lbfgs"] if FAST_MODE else ["lbfgs","saga"]
     return [{
         "clf__solver": solvers,
-        "clf__penalty": ["l2"],
+        "clf__penalty": ["l2", "l1"],
         "clf__C": C_GRID,
         "clf__class_weight": ["balanced"],
         "clf__max_iter": [MAX_ITER]
